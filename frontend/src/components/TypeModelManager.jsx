@@ -4,12 +4,12 @@ const TypeModelManager = (props) => {
   return (
     <div className="type-model-manager-container">
       <button
-        onClick={() => props.handleChangeTypeModel(ModelEnum.GTLF)}
+        onClick={() => props.handleChangeTypeModel(ModelEnum.GLTF)}
         className={`type-model-container ${
-          props.typeModel === ModelEnum.GTL ? "active" : ""
+          props.typeModel === ModelEnum.GLTF ? "active" : ""
         }`}
       >
-        <text>GTLF File</text>
+        <text>GLTF File</text>
       </button>
       <button
         onClick={() => props.handleChangeTypeModel(ModelEnum.GLB)}

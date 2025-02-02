@@ -4,17 +4,10 @@ import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
 import ModelRenderer from "./ModelRenderer";
 import ColorPicker from "./ColorPicker";
 
-const ThreeModel = () => {
+const ThreeModel = (props) => {
   const [selectedPart, setSelectedPart] = useState(null);
 
-  const handlePointerDown = (event) => {
-    event.stopPropagation();
-    setSelectedPart(event.object);
-  };
 
-  const handlePointerMissed = () => {
-    setSelectedPart(null);
-  };
 
   return (
     <>
@@ -31,9 +24,9 @@ const ThreeModel = () => {
         />
         <Suspense fallback={null}>
           <ModelRenderer
+            typeModel={props.typeModel}
             selectedPart={selectedPart}
-            handlePointerDown={handlePointerDown}
-            handlePointerMissed={handlePointerMissed}
+            setSelectedPart={setSelectedPart}
           />
           <Environment files="royal_esplanade_1k.hdr" />
           <ContactShadows

@@ -19,7 +19,7 @@ function App() {
         typeModel={typeModel}
         handleChangeTypeModel={handleChangeTypeModel}
       />
-      <ThreeModel />
+      <ThreeModel typeModel={typeModel}/>
     </div>
   );
 }
