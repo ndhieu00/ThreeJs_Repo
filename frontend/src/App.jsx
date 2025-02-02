@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Toaster } from "react-hot-toast";
 import "./App.css";
 
 import ThreeModel from "./components/ThreeModel.jsx";
@@ -15,11 +16,12 @@ function App() {
 
   return (
     <div className="app-container">
+      <Toaster position="top-right" reverseOrder={false} />
       <TypeModelManager
         typeModel={typeModel}
         handleChangeTypeModel={handleChangeTypeModel}
       />
-      <ThreeModel typeModel={typeModel}/>
+      <ThreeModel typeModel={typeModel} />
     </div>
   );
 }
