@@ -9,7 +9,7 @@ const TypeModelManager = (props) => {
           props.typeModel === ModelEnum.GLTF ? "active" : ""
         }`}
       >
-        <text>GLTF File</text>
+        <span>GLTF File</span>
       </button>
       <button
         onClick={() => props.handleChangeTypeModel(ModelEnum.GLB)}
@@ -17,7 +17,7 @@ const TypeModelManager = (props) => {
           props.typeModel === ModelEnum.GLB ? "active" : ""
         }`}
       >
-        <text>GLB File</text>
+        <span>GLB File</span>
       </button>
       <button
         onClick={() => props.handleChangeTypeModel(ModelEnum.OBJ)}
@@ -25,7 +25,7 @@ const TypeModelManager = (props) => {
           props.typeModel === ModelEnum.OBJ ? "active" : ""
         }`}
       >
-        <text>OBJ File</text>
+        <span>OBJ File</span>
       </button>
     </div>
   );
