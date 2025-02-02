@@ -29,11 +29,12 @@ const ModelRenderer = (props) => {
 
           model.position.sub(center);
           model.updateMatrixWorld(true);
+          toast.success("Load model successfully");
           setScene(model);
         },
         undefined,
         (error) => {
-          toast.error(error);
+          toast.error(error.message);
           console.error("Error loading model:", error);
         }
       );
@@ -51,12 +52,21 @@ const ModelRenderer = (props) => {
               import.meta.env.VITE_API_URL + "/api/textures/" + child.name;
 
             if (texturePath) {
-              const texture = textureLoader.load(texturePath);
+              const texture = textureLoader.load(
+                texturePath,
+                undefined,
+                undefined,
+                (error) => {
+                  toast.error("Load texture fail");
+                  console.error("Error loading texture:", error);
+                }
+              );
               child.material.map = texture; // Apply texture to the material
               child.material.needsUpdate = true; // Ensure the material updates
             }
           }
         });
+        toast.success("Load model successfully");
         setScene(object);
       });
     };
