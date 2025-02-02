@@ -1,6 +1,16 @@
 const express = require('express')
 const path = require('path')
 const cors = require('cors')
+const multer = require("multer")
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, '/models')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+const upload = multer({ dest: 'models/'})
 
 const app = express()
 const PORT = 3000
@@ -15,6 +25,10 @@ app.use('/models', express.static(path.join(__dirname, 'models')))
 app.get('/', (req, res) => {
     console.log("Got homepage")
     res.end("Hello")
+})
+
+app.post('/api/upload', upload.single('file'), (req, res) => {
+  res.json(req.file)
 })
 
 // RESTful API to fetch model data

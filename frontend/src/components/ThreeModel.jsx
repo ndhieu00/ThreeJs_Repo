@@ -7,8 +7,6 @@ import ColorPicker from "./ColorPicker";
 const ThreeModel = (props) => {
   const [selectedPart, setSelectedPart] = useState(null);
 
-
-
   return (
     <>
       <Canvas
