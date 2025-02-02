@@ -22,7 +22,6 @@ app.use("/textures", express.static(path.join(__dirname, "models/textures")));
 app.get("/api/textures/:textureName", (req, res) => {
   const textureName = req.params.textureName + ".png";
   const texturePath = path.join(__dirname, "models/textures", textureName);
-  console.log("texturePath:", texturePath);
 
   res.sendFile(texturePath, (err) => {
     if (err) {
