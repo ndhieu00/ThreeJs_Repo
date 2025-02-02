@@ -1,0 +1,64 @@
+/* Common */
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* App Component */
+.app-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Type Model Manager Component */
+.type-model-manager-container {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 60px;
+  right: 120px;
+}
+
+.type-model-container {
+  background-color: transparent;
+  border: 1px solid #A6F1E0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.type-model-container.active {
+  border: 3px solid #F4F8D3;
+}
+
+
+/* Color Picker Component */
+.color-picker-container {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
